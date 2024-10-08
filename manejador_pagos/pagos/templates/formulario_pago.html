@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Pago</title>
+</head>
+<body>
+    <h2>Crear un nuevo pago</h2>
+    <form action="/pagos/crear_pago/" method="POST">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" value="Pago de Matrícula" required /><br><br>
+        
+        <label>Fecha:</label>
+        <input type="date" name="fecha" value="2024-01-01" required /><br><br>
+        
+        <label>Valor (COP):</label>
+        <input type="number" name="valor" value="5000" required /><br><br>
+        
+        <label>Interés (%):</label>
+        <input type="number" step="0.01" name="interes" value="0" required /><br><br>
+        
+        <label>Pagado:</label>
+        <input type="checkbox" name="pagado" /><br><br>
+        
+        <label>Tipo:</label>
+        <input type="text" name="tipo" value="matrícula" required /><br><br>
+        
+        <label>Periodicidad (Meses):</label>
+        <input type="number" name="periodicidad" value="12" required /><br><br>
+        
+        <label>Estudiante ID:</label>
+        <input type="number" name="estudiante_id" value="1" required /><br><br>
+        
+        <label>Responsable ID:</label>
+        <input type="number" name="responsablef_id" value="1" required /><br><br>
+        
+        <label>Cronograma ID:</label>
+        <input type="number" name="cronograma_id" value="1" required /><br><br>
+        
+        <label>Descuento ID (opcional):</label>
+        <input type="number" name="descuento_id" /><br><br>
+        
+        <button type="submit">Crear Pago</button>
+    </form>
+</body>
+</html>
