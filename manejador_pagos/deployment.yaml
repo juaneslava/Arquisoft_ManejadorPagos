@@ -146,7 +146,108 @@ resources:
 
 # Monitoring app instance
 - type: compute.v1.instance
-  name: pagos-app
+  name: pagos-app-a
+  properties:
+    zone: us-central1-a
+    machineType: https://www.googleapis.com/compute/v1/projects/disponibilidad-arquisoft/zones/us-central1-a/machineTypes/custom-2-12288
+    disks:
+    - deviceName: boot
+      type: PERSISTENT
+      boot: true
+      autoDelete: true
+      initializeParams:
+        sourceImage: https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20240307b
+    networkInterfaces:
+    - network: https://www.googleapis.com/compute/v1/projects/disponibilidad-arquisoft/global/networks/default
+      networkIP: 10.128.0.66
+      accessConfigs:
+      - name: External NAT
+        type: ONE_TO_ONE_NAT
+    tags:
+      items: 
+      - cbd-services-firewall
+    metadata:
+      items:
+      - key: startup-script
+        value: |
+          #!/bin/bash
+          sudo apt-get update
+          sudo apt install python3-pip -y
+          sudo git clone https://github.com/juaneslava/Arquisoft_ManejadorPagos.git
+          cd Arquisoft_ManejadorPagos/manejador_pagos
+          sudo pip3 install -r requirements.txt
+          sudo python3 manage.py makemigrations
+          sudo python3 manage.py migrate
+- type: compute.v1.instance
+  name: pagos-app-b
+  properties:
+    zone: us-central1-a
+    machineType: https://www.googleapis.com/compute/v1/projects/disponibilidad-arquisoft/zones/us-central1-a/machineTypes/custom-2-12288
+    disks:
+    - deviceName: boot
+      type: PERSISTENT
+      boot: true
+      autoDelete: true
+      initializeParams:
+        sourceImage: https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20240307b
+    networkInterfaces:
+    - network: https://www.googleapis.com/compute/v1/projects/disponibilidad-arquisoft/global/networks/default
+      networkIP: 10.128.0.66
+      accessConfigs:
+      - name: External NAT
+        type: ONE_TO_ONE_NAT
+    tags:
+      items: 
+      - cbd-services-firewall
+    metadata:
+      items:
+      - key: startup-script
+        value: |
+          #!/bin/bash
+          sudo apt-get update
+          sudo apt install python3-pip -y
+          sudo git clone https://github.com/juaneslava/Arquisoft_ManejadorPagos.git
+          cd Arquisoft_ManejadorPagos/manejador_pagos
+          sudo pip3 install -r requirements.txt
+          sudo python3 manage.py makemigrations
+          sudo python3 manage.py migrate
+
+- type: compute.v1.instance
+  name: pagos-app-c
+  properties:
+    zone: us-central1-a
+    machineType: https://www.googleapis.com/compute/v1/projects/disponibilidad-arquisoft/zones/us-central1-a/machineTypes/custom-2-12288
+    disks:
+    - deviceName: boot
+      type: PERSISTENT
+      boot: true
+      autoDelete: true
+      initializeParams:
+        sourceImage: https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20240307b
+    networkInterfaces:
+    - network: https://www.googleapis.com/compute/v1/projects/disponibilidad-arquisoft/global/networks/default
+      networkIP: 10.128.0.66
+      accessConfigs:
+      - name: External NAT
+        type: ONE_TO_ONE_NAT
+    tags:
+      items: 
+      - cbd-services-firewall
+    metadata:
+      items:
+      - key: startup-script
+        value: |
+          #!/bin/bash
+          sudo apt-get update
+          sudo apt install python3-pip -y
+          sudo git clone https://github.com/juaneslava/Arquisoft_ManejadorPagos.git
+          cd Arquisoft_ManejadorPagos/manejador_pagos
+          sudo pip3 install -r requirements.txt
+          sudo python3 manage.py makemigrations
+          sudo python3 manage.py migrate
+
+- type: compute.v1.instance
+  name: pagos-app-d
   properties:
     zone: us-central1-a
     machineType: https://www.googleapis.com/compute/v1/projects/disponibilidad-arquisoft/zones/us-central1-a/machineTypes/custom-2-12288
