@@ -10,6 +10,9 @@ def inicio(request):
 def formulario_pago(request):
     return render(request, 'formulario_pago.html')
 
+def health_check(request):
+    return JsonResponse({'message': 'OK'}, status=200)
+
 @csrf_exempt
 def crear_pago(request):
     if request.method == 'POST':
