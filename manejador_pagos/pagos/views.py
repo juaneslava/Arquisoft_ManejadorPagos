@@ -56,7 +56,9 @@ def crear_pago(request):
 def obtenerpagos(request):
     if request.method== 'GET':
         pagos = Pago.objects.all()
-        return pagos
+        pagos_list = list(pagos.values())  # Convierte el queryset en una lista de diccionarios
+        return JsonResponse(pagos_list, safe=False)
+        
 
 
 # Create your views here.
