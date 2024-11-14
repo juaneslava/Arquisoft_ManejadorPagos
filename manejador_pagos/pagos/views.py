@@ -53,5 +53,10 @@ def crear_pago(request):
             return JsonResponse({"error": str(e)}, status=400)
     return JsonResponse({"error": "Metodo no permitido"}, status=405)
 
+def obtenerpagos(request):
+    if request.method== 'GET':
+        pagos = Pago.objects.all()
+        return Pagos
+
 
 # Create your views here.
