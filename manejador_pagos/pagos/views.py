@@ -56,7 +56,7 @@ def crear_pago(request):
 def obtenerpagos(request):
     if request.method== 'GET':
         pagos = Pago.objects.all()
-        return Pagos
+        return pagos
 
 
 # Create your views here.
