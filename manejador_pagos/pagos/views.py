@@ -3,6 +3,9 @@ from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Pago, Estudiante, Responsablef, Cronograma, Descuento
 import json
+from django.core.signing import Signer
+
+signer = Signer()
 
 def inicio(request):
     return HttpResponse("Bienvenido al manejador de pagos")
