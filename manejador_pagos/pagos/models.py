@@ -1,4 +1,7 @@
 from django.db import models
+from django.core.signing import Signer
+
+signer = Signer()
 
 class Institucion(models.Model):
     nombre = models.CharField(max_length=50)
@@ -62,7 +65,7 @@ class Pago(models.Model):
     nombre = models.CharField(max_length=50)
     fecha = models.DateField(default='2024-01-01')
     valor = models.FloatField(default=0)
-    interes = models.FloatField(default=0)
+    interes =models.FloatField(default=0)
     pagado = models.BooleanField(default=False)
     tipo = models.CharField(max_length=50)
     periodicidad = models.IntegerField(default=0)
@@ -70,7 +73,18 @@ class Pago(models.Model):
     responsableF = models.ForeignKey(Responsablef, on_delete=models.CASCADE)
     cronograma = models.ForeignKey(Cronograma, on_delete=models.CASCADE)
     descuento = models.ForeignKey(Descuento, on_delete=models.SET_NULL, null = True)
-
+    
     def __str__(self):
         return '{}'.format(self.nombre)
+
+    def save(self, *args, **kwargs):
+        # Firma ciertos campos antes de guardarlos
+        self.nombre = signer.sign(self.nombre)
+        self.fecha = signer.sign(str(self.fecha))
+        self.valor = signer.sign(str(self.valor))
+        self.interes = signer.sign(str(self.interes))
+        self.pagado = signer.sign(str(self.pagado))
+        self.tipo = signer.sign(self.tipo)
+        self.periodicidad = signer.sign(str(self.periodicidad))
+        super().save(*args, **kwargs)
 # Create your models here.
