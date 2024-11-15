@@ -21,7 +21,7 @@ from pagos import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pagos/', include('pagos.urls')),
-    path('', views.inicio),
+    path('', views.index, name='index'),
     #path('health/', views.health_check, name='health'),
     path(r'', include('django.contrib.auth.urls')),
     path(r'', include('social_django.urls')),    
