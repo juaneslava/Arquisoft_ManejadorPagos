@@ -4,10 +4,12 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import Pago, Estudiante, Responsablef, Cronograma, Descuento
 from django.contrib.auth.decorators import login_required
 from manejador_pagos.auth0backend import getRole
+
 import json
 
-def inicio(request):
-    return HttpResponse("Bienvenido al manejador de pagos")
+@login_required
+def index(request):
+    return render(request, 'base.html')
 
 def formulario_pago(request):
     return render(request, 'formulario_pago.html')
@@ -15,12 +17,12 @@ def formulario_pago(request):
 def health_check(request):
     return JsonResponse({'message': 'OK'}, status=200)
 
-@csrf_exempt
 @login_required
+@csrf_exempt
 def crear_pago(request):
-    if request.method == 'POST':
-        role = getRole(request)
-        if role == "Responsable financiero" or role == "Administrador":
+    role = getRole(request)
+    if role == "Responsable financiero" or role == "Administrador":
+        if request.method == 'POST':
             try:
                 # Verifica si los datos vienen de un formulario (POST clásico) o en formato JSON
                 if request.content_type == 'application/json':
@@ -58,7 +60,6 @@ def crear_pago(request):
                 return JsonResponse({"error": str(e)}, status=400)
     return JsonResponse({"error": "Metodo no permitido"}, status=405)
 
-@login_required
 def obtenerpagos(request):
     role = getRole(request)
     if role == "Administrador":
