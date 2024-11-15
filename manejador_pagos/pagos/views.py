@@ -16,15 +16,15 @@ def health_check(request):
 
 def obtenerpagos(request):
     if request.method== 'GET':
-        try:
-            pagos = Pago.objects.all()
-            for pago in pagos:
-                print(pagos.query)
-                print(pagos)
-            pagos_list = list(pagos.values())  # Convierte el queryset en una lista de diccionarios
-            return JsonResponse(pagos_list, safe=False)
-        except BadSignature as e:
-            return JsonResponse({"error": "error descifrando registro"}, status=405)
+        #try:
+        pagos = Pago.objects.all()
+        for pago in pagos:
+            print(pagos.query)
+            print(pagos)
+        pagos_list = list(pagos.values())  # Convierte el queryset en una lista de diccionarios
+        return JsonResponse(pagos_list, safe=False)
+        #except BadSignature as e:
+        #    return JsonResponse({"error": "error descifrando registro"}, status=405)
 
 
 @csrf_exempt
