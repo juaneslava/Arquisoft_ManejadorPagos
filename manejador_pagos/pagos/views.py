@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Pago, Estudiante, Responsablef, Cronograma, Descuento
+from django.core.signing import BadSignature
 import json
 
 def inicio(request):
@@ -15,9 +16,16 @@ def health_check(request):
 
 def obtenerpagos(request):
     if request.method== 'GET':
-        pagos = Pago.objects.all()
-        pagos_list = list(pagos.values())  # Convierte el queryset en una lista de diccionarios
-        return JsonResponse(pagos_list, safe=False)
+        try:
+            pagos = Pago.objects.all()
+            for pago in pagos:
+                print(pagos.query)
+                print(pagos)
+            pagos_list = list(pagos.values())  # Convierte el queryset en una lista de diccionarios
+            return JsonResponse(pagos_list, safe=False)
+        except BadSignature as e:
+            return JsonResponse({"error": "error descifrando registro"}, status=405)
+
 
 @csrf_exempt
 def crear_pago(request):
