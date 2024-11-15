@@ -1,6 +1,6 @@
 [
     {
-      "model": "generarreportes.institucion",
+      "model": "pagos.institucion",
       "pk": 1,
       "fields": {
         "nombre": "Institución ABC",
@@ -9,7 +9,7 @@
       }
     },
     {
-      "model": "generarreportes.estudiante",
+      "model": "pagos.estudiante",
       "pk": 1,
       "fields": {
         "codigo": 1234,
@@ -18,7 +18,7 @@
       }
     },
     {
-      "model": "generarreportes.usuario",
+      "model": "pagos.usuario",
       "pk": 1,
       "fields": {
         "usuario": "jperez",
@@ -30,7 +30,7 @@
       }
     },
     {
-      "model": "generarreportes.curso",
+      "model": "pagos.curso",
       "pk": 1,
       "fields": {
         "nombre": "Matemáticas Básicas",
@@ -39,7 +39,7 @@
       }
     },
     {
-      "model": "generarreportes.responsablef",
+      "model": "pagos.responsablef",
       "pk": 1,
       "fields": {
         "usuario": "rmartinez",
@@ -52,7 +52,7 @@
       }
     },
     {
-      "model": "generarreportes.cronograma",
+      "model": "pagos.cronograma",
       "pk": 1,
       "fields": {
         "anio": 2024,
@@ -61,7 +61,7 @@
       }
     },
     {
-      "model": "generarreportes.descuento",
+      "model": "pagos.descuento",
       "pk": 1,
       "fields": {
         "nombre": "Descuento por pronto pago",
@@ -72,7 +72,7 @@
       }
     },
     {
-      "model": "generarreportes.pago",
+      "model": "pagos.pago",
       "pk": 1,
       "fields": {
         "nombre": "Pago Enero",
@@ -88,41 +88,8 @@
         "descuento": 1
       }
     },
-    {
-      "model": "generarreportes.banco",
-      "pk": 1,
-      "fields": {
-        "nombre": "Banco Nacional",
-        "formato": "Formato de Pago",
-        "pago": 1
-      }
-    },
-    {
-      "model": "generarreportes.recibo",
-      "pk": 1,
-      "fields": {
-        "nombre": "Recibo de Pago Enero",
-        "fecha": "2024-01-01",
-        "valor": 450.0,
-        "medioPago": "Transferencia",
-        "tipo": 1,
-        "pago": 1
-      }
-    },
-    {
-      "model": "generarreportes.reporte",
-      "pk": 1,
-      "fields": {
-        "nombre": "Reporte de Pagos Enero",
-        "tipo": "Mensual",
-        "fechaCreacion": "2024-01-01",
-        "ruta": "/reportes/pagos_enero.pdf",
-        "pago": [1]
-      }
-    }
-    ,
       {
-        "model": "generarreportes.institucion",
+        "model": "pagos.institucion",
         "pk": 2,
         "fields": {
           "nombre": "Institución XYZ",
@@ -131,7 +98,7 @@
         }
       },
       {
-        "model": "generarreportes.institucion",
+        "model": "pagos.institucion",
         "pk": 3,
         "fields": {
           "nombre": "Institución DEF",
@@ -140,7 +107,7 @@
         }
       },
       {
-        "model": "generarreportes.estudiante",
+        "model": "pagos.estudiante",
         "pk": 2,
         "fields": {
           "codigo": 2234,
@@ -149,7 +116,7 @@
         }
       },
       {
-        "model": "generarreportes.estudiante",
+        "model": "pagos.estudiante",
         "pk": 3,
         "fields": {
           "codigo": 3234,
@@ -158,7 +125,7 @@
         }
       },
       {
-        "model": "generarreportes.usuario",
+        "model": "pagos.usuario",
         "pk": 2,
         "fields": {
           "usuario": "mlopez",
@@ -170,7 +137,7 @@
         }
       },
       {
-        "model": "generarreportes.usuario",
+        "model": "pagos.usuario",
         "pk": 3,
         "fields": {
           "usuario": "cfernandez",
@@ -182,7 +149,7 @@
         }
       },
       {
-        "model": "generarreportes.curso",
+        "model": "pagos.curso",
         "pk": 2,
         "fields": {
           "nombre": "Ciencias Naturales",
@@ -191,7 +158,7 @@
         }
       },
       {
-        "model": "generarreportes.responsablef",
+        "model": "pagos.responsablef",
         "pk": 2,
         "fields": {
           "usuario": "asanchez",
@@ -204,7 +171,7 @@
         }
       },
       {
-        "model": "generarreportes.cronograma",
+        "model": "pagos.cronograma",
         "pk": 2,
         "fields": {
           "anio": 2024,
@@ -213,7 +180,7 @@
         }
       },
       {
-        "model": "generarreportes.descuento",
+        "model": "pagos.descuento",
         "pk": 2,
         "fields": {
           "nombre": "Descuento por matrícula temprana",
@@ -224,7 +191,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 2,
         "fields": {
           "nombre": "Pago Febrero",
@@ -241,39 +208,7 @@
         }
       },
       {
-        "model": "generarreportes.banco",
-        "pk": 2,
-        "fields": {
-          "nombre": "Banco Internacional",
-          "formato": "Formato de Pago 2",
-          "pago": 2
-        }
-      },
-      {
-        "model": "generarreportes.recibo",
-        "pk": 2,
-        "fields": {
-          "nombre": "Recibo de Pago Febrero",
-          "fecha": "2024-02-01",
-          "valor": 510.0,
-          "medioPago": "Tarjeta de crédito",
-          "tipo": 1,
-          "pago": 2
-        }
-      },
-      {
-        "model": "generarreportes.reporte",
-        "pk": 2,
-        "fields": {
-          "nombre": "Reporte de Pagos Febrero",
-          "tipo": "Mensual",
-          "fechaCreacion": "2024-02-01",
-          "ruta": "/reportes/pagos_febrero.pdf",
-          "pago": [2]
-        }
-      },
-      {
-        "model": "generarreportes.institucion",
+        "model": "pagos.institucion",
         "pk": 4,
         "fields": {
           "nombre": "Institución GHI",
@@ -282,7 +217,7 @@
         }
       },
       {
-        "model": "generarreportes.estudiante",
+        "model": "pagos.estudiante",
         "pk": 4,
         "fields": {
           "codigo": 4234,
@@ -291,7 +226,7 @@
         }
       },
       {
-        "model": "generarreportes.usuario",
+        "model": "pagos.usuario",
         "pk": 4,
         "fields": {
           "usuario": "agomez",
@@ -303,7 +238,7 @@
         }
       },
       {
-        "model": "generarreportes.curso",
+        "model": "pagos.curso",
         "pk": 3,
         "fields": {
           "nombre": "Historia del Arte",
@@ -312,7 +247,7 @@
         }
       },
       {
-        "model": "generarreportes.responsablef",
+        "model": "pagos.responsablef",
         "pk": 3,
         "fields": {
           "usuario": "rgutierrez",
@@ -325,7 +260,7 @@
         }
       },
       {
-        "model": "generarreportes.cronograma",
+        "model": "pagos.cronograma",
         "pk": 3,
         "fields": {
           "anio": 2024,
@@ -334,7 +269,7 @@
         }
       },
       {
-        "model": "generarreportes.descuento",
+        "model": "pagos.descuento",
         "pk": 3,
         "fields": {
           "nombre": "Descuento por excelencia académica",
@@ -345,7 +280,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 3,
         "fields": {
           "nombre": "Pago Marzo",
@@ -362,39 +297,7 @@
         }
       },
       {
-        "model": "generarreportes.banco",
-        "pk": 3,
-        "fields": {
-          "nombre": "Banco Financiero",
-          "formato": "Formato de Pago 3",
-          "pago": 3
-        }
-      },
-      {
-        "model": "generarreportes.recibo",
-        "pk": 3,
-        "fields": {
-          "nombre": "Recibo de Pago Marzo",
-          "fecha": "2024-03-01",
-          "valor": 560.0,
-          "medioPago": "Efectivo",
-          "tipo": 1,
-          "pago": 3
-        }
-      },
-      {
-        "model": "generarreportes.reporte",
-        "pk": 3,
-        "fields": {
-          "nombre": "Reporte de Pagos Marzo",
-          "tipo": "Mensual",
-          "fechaCreacion": "2024-03-01",
-          "ruta": "/reportes/pagos_marzo.pdf",
-          "pago": [3]
-        }
-      },
-      {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 4,
         "fields": {
           "nombre": "Pago Abril",
@@ -411,7 +314,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 5,
         "fields": {
           "nombre": "Pago Mayo",
@@ -428,7 +331,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 6,
         "fields": {
           "nombre": "Pago Junio",
@@ -445,7 +348,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 7,
         "fields": {
           "nombre": "Pago Julio",
@@ -462,7 +365,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 8,
         "fields": {
           "nombre": "Pago Agosto",
@@ -479,7 +382,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 9,
         "fields": {
           "nombre": "Pago Septiembre",
@@ -496,7 +399,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 10,
         "fields": {
           "nombre": "Pago Octubre",
@@ -513,7 +416,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 11,
         "fields": {
           "nombre": "Pago Noviembre",
@@ -530,7 +433,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 12,
         "fields": {
           "nombre": "Pago Diciembre",
@@ -547,7 +450,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 13,
         "fields": {
           "nombre": "Pago Abril",
@@ -564,7 +467,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 14,
         "fields": {
           "nombre": "Pago Mayo",
@@ -581,7 +484,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 15,
         "fields": {
           "nombre": "Pago Junio",
@@ -598,7 +501,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 16,
         "fields": {
           "nombre": "Pago Julio",
@@ -615,7 +518,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 17,
         "fields": {
           "nombre": "Pago Agosto",
@@ -632,7 +535,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 18,
         "fields": {
           "nombre": "Pago Septiembre",
@@ -649,7 +552,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 19,
         "fields": {
           "nombre": "Pago Octubre",
@@ -666,7 +569,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 20,
         "fields": {
           "nombre": "Pago Noviembre",
@@ -683,7 +586,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 21,
         "fields": {
           "nombre": "Pago Diciembre",
@@ -700,7 +603,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 22,
         "fields": {
           "nombre": "Pago Enero",
@@ -717,7 +620,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 23,
         "fields": {
           "nombre": "Pago Febrero",
@@ -734,7 +637,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 24,
         "fields": {
           "nombre": "Pago Marzo",
@@ -751,7 +654,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 25,
         "fields": {
           "nombre": "Pago Abril",
@@ -768,7 +671,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 26,
         "fields": {
           "nombre": "Pago Mayo",
@@ -785,7 +688,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 27,
         "fields": {
           "nombre": "Pago Junio",
@@ -802,7 +705,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 28,
         "fields": {
           "nombre": "Pago Julio",
@@ -819,7 +722,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 29,
         "fields": {
           "nombre": "Pago Agosto",
@@ -836,7 +739,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 30,
         "fields": {
           "nombre": "Pago Septiembre",
@@ -853,7 +756,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 31,
         "fields": {
           "nombre": "Pago Octubre",
@@ -870,7 +773,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 32,
         "fields": {
           "nombre": "Pago Noviembre",
@@ -887,7 +790,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 33,
         "fields": {
           "nombre": "Pago Diciembre",
@@ -904,7 +807,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 34,
         "fields": {
           "nombre": "Pago Enero",
@@ -921,7 +824,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 35,
         "fields": {
           "nombre": "Pago Febrero",
@@ -938,7 +841,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 36,
         "fields": {
           "nombre": "Pago Marzo",
@@ -955,7 +858,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 37,
         "fields": {
           "nombre": "Pago Abril",
@@ -972,7 +875,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 38,
         "fields": {
           "nombre": "Pago Mayo",
@@ -989,7 +892,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 39,
         "fields": {
           "nombre": "Pago Junio",
@@ -1006,7 +909,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 40,
         "fields": {
           "nombre": "Pago Julio",
@@ -1024,7 +927,7 @@
       }
       ,
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 41,
         "fields": {
           "nombre": "Pago Enero Curso 1",
@@ -1041,7 +944,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 42,
         "fields": {
           "nombre": "Pago Febrero Curso 1",
@@ -1058,7 +961,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 44,
         "fields": {
           "nombre": "Pago Abril Curso 1",
@@ -1075,7 +978,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 45,
         "fields": {
           "nombre": "Pago Mayo Curso 1",
@@ -1092,7 +995,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 47,
         "fields": {
           "nombre": "Pago Julio Curso 1",
@@ -1109,7 +1012,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 48,
         "fields": {
           "nombre": "Pago Agosto Curso 1",
@@ -1126,7 +1029,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 50,
         "fields": {
           "nombre": "Pago Octubre Curso 1",
@@ -1143,7 +1046,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 51,
         "fields": {
           "nombre": "Pago Noviembre Curso 1",
@@ -1160,7 +1063,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 49,
         "fields": {
           "nombre": "Pago Diciembre Curso 1",
@@ -1177,7 +1080,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 46,
         "fields": {
           "nombre": "Pago Enero Curso 1",
@@ -1194,7 +1097,7 @@
         }
       },
       {
-        "model": "generarreportes.pago",
+        "model": "pagos.pago",
         "pk": 43,
         "fields": {
           "nombre": "Pago Febrero Curso 1",
