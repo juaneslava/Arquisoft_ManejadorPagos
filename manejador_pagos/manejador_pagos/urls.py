@@ -21,6 +21,6 @@ from pagos import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pagos/', include('pagos.urls')),
-     path('', views.inicio),
-     path('health/', views.health_check, name='health'),
+    path('', views.inicio),
+    path('health/', views.health_check, name='health'),
 ]

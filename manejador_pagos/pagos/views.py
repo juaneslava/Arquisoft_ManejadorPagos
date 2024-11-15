@@ -3,9 +3,6 @@ from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Pago, Estudiante, Responsablef, Cronograma, Descuento
 import json
-from django.core.signing import Signer
-
-signer = Signer()
 
 def inicio(request):
     return HttpResponse("Bienvenido al manejador de pagos")
@@ -15,6 +12,12 @@ def formulario_pago(request):
 
 def health_check(request):
     return JsonResponse({'message': 'OK'}, status=200)
+
+def obtenerpagos(request):
+    if request.method== 'GET':
+        pagos = Pago.objects.all()
+        pagos_list = list(pagos.values())  # Convierte el queryset en una lista de diccionarios
+        return JsonResponse(pagos_list, safe=False)
 
 @csrf_exempt
 def crear_pago(request):
@@ -36,12 +39,13 @@ def crear_pago(request):
                 descuento = Descuento.objects.get(id=data['descuento_id'])
 
             pagado = True if data.get('pagado') == 'on' else False
-
+            print("data: " + data['valor'])
+            
             # Crear el pago
             pago = Pago.objects.create(
                 nombre=data['nombre'],
                 fecha=data['fecha'],
-                valor=data['valor'],
+                valor= data['valor'],
                 interes=data['interes'],
                 pagado=pagado,
                 tipo=data['tipo'],

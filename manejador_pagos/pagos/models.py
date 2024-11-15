@@ -1,7 +1,6 @@
 from django.db import models
-from django.core.signing import Signer
+from django_cryptography.fields import encrypt
 
-signer = Signer()
 
 class Institucion(models.Model):
     nombre = models.CharField(max_length=50)
@@ -62,29 +61,30 @@ class Descuento(models.Model):
         return '{}'.format(self.nombre)
 
 class Pago(models.Model):
-    nombre = models.CharField(max_length=50)
-    fecha = models.DateField(default='2024-01-01')
-    valor = models.FloatField(default=0)
-    interes =models.FloatField(default=0)
-    pagado = models.BooleanField(default=False)
-    tipo = models.CharField(max_length=50)
-    periodicidad = models.IntegerField(default=0)
-    estudiante = models.ForeignKey(Estudiante, on_delete=models.CASCADE)
-    responsableF = models.ForeignKey(Responsablef, on_delete=models.CASCADE)
-    cronograma = models.ForeignKey(Cronograma, on_delete=models.CASCADE)
-    descuento = models.ForeignKey(Descuento, on_delete=models.SET_NULL, null = True)
+    nombre = encrypt(models.CharField(null=True,default=None, max_length=50))
+    fecha = encrypt(models.DateTimeField(null=True,default=None))
+    valor = encrypt(models.FloatField(null=True,default=None))
+    interes = encrypt(models.FloatField(null=True,default=None))
+    pagado = encrypt(models.BooleanField(null=True,default=None))
+    tipo = encrypt(models.CharField(max_length=50, null=True,default=None))
+    periodicidad = encrypt(models.IntegerField(null=True,default=None))
+    estudiante = (models.ForeignKey(Estudiante, on_delete=models.CASCADE))
+    responsableF = (models.ForeignKey(Responsablef, on_delete=models.CASCADE))
+    cronograma = (models.ForeignKey(Cronograma, on_delete=models.CASCADE))
+    descuento = (models.ForeignKey(Descuento, on_delete=models.SET_NULL, null = True))
     
     def __str__(self):
         return '{}'.format(self.nombre)
 
     def save(self, *args, **kwargs):
         # Firma ciertos campos antes de guardarlos
-        self.nombre = signer.sign(self.nombre)
-        self.fecha = signer.sign(str(self.fecha))
-        self.valor = signer.sign(str(self.valor))
-        self.interes = signer.sign(str(self.interes))
-        self.pagado = signer.sign(str(self.pagado))
-        self.tipo = signer.sign(self.tipo)
-        self.periodicidad = signer.sign(str(self.periodicidad))
+        self.nombre = self.nombre
+        self.fecha = str(self.fecha)
+        self.valor = str(self.valor)
+        self.interes = str(self.interes)
+        self.pagado = str(self.pagado)
+        self.tipo = self.tipo
+        self.periodicidad = str(self.periodicidad)
         super().save(*args, **kwargs)
+    
 # Create your models here.
