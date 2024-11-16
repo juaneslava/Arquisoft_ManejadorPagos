@@ -14,7 +14,7 @@ class Institucion(models.Model):
 class Estudiante(models.Model):
     codigo = models.IntegerField(default=1)
     nombre = models.CharField(max_length=50)
-    institucion = models.ForeignKey(Institucion, on_delete=models.CASCADE )
+    institucion = models.ForeignKey(Institucion, on_delecdte=models.CASCADE )
 
     def __str__(self):
         return '{}'.format(self.nombre)
@@ -64,7 +64,7 @@ class Descuento(models.Model):
 
 class Pago(models.Model):
     nombre = encrypt(models.CharField(null=True,default=None, max_length=50))
-    fecha = encrypt(models.DateTimeField(null=True,default=None))
+    fecha = (models.DateTimeField(null=True,default=None))
     valor = encrypt(models.FloatField(null=True,default=None))
     interes = encrypt(models.FloatField(null=True,default=None))
     pagado = encrypt(models.BooleanField(null=True,default=None))
