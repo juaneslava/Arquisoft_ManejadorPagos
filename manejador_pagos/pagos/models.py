@@ -64,7 +64,7 @@ class Descuento(models.Model):
 
 class Pago(models.Model):
     nombre = encrypt(models.CharField(null=True,default=None, max_length=50))
-    fecha = encrypt(models.DateTimeField(null=True,default=None))
+    fecha = (models.DateTimeField(null=True,default=None))
     valor = encrypt(models.FloatField(null=True,default=None))
     interes = encrypt(models.FloatField(null=True,default=None))
     pagado = encrypt(models.BooleanField(null=True,default=None))
