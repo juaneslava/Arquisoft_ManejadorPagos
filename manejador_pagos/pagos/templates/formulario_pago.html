@@ -6,6 +6,7 @@
 <body>
     <h2>Crear un nuevo pago</h2>
     <form action="/pagos/crear_pago/" method="POST">
+        {% csrf_token %}
         <label>Nombre:</label>
         <input type="text" name="nombre" value="Pago de Matrícula" required /><br><br>
         

@@ -30,7 +30,7 @@ def obtenerpagos(request):
         #    return JsonResponse({"error": "error descifrando registro"}, status=405)
 
 
-@csrf_exempt
+
 @login_required
 def crear_pago(request):
     if request.method == 'POST':
