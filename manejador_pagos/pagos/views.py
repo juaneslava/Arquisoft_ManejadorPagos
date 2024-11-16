@@ -31,7 +31,7 @@ def obtenerpagos(request):
 
 
 
-#@login_required
+@login_required
 def crear_pago(request):
     if request.method == 'POST':
         role = getRole(request)  # Asegúrate de que esta función está definida y funciona correctamente.
