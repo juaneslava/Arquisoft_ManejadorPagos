@@ -14,7 +14,7 @@ class Institucion(models.Model):
 class Estudiante(models.Model):
     codigo = models.IntegerField(default=1)
     nombre = models.CharField(max_length=50)
-    institucion = models.ForeignKey(Institucion, on_delecdte=models.CASCADE )
+    institucion = models.ForeignKey(Institucion, on_delete=models.CASCADE )
 
     def __str__(self):
         return '{}'.format(self.nombre)
