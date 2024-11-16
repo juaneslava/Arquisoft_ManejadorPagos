@@ -56,7 +56,7 @@ class Descuento(models.Model):
     porcentaje = models.FloatField(default=0)
     fechaInicio = models.DateField(default='2024-01-01')
     fechaFinal = models.DateField(default='2024-01-01')
-    fechaCreacion = models.DateField(auto_now = True)
+    fechaCreacion = models.DateField()
 
     def __str__(self):
         return '{}'.format(self.nombre)
