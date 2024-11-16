@@ -53,7 +53,6 @@ class Cronograma(models.Model):
         return '{}'.format(self.nombre)
 
 class Descuento(models.Model):
-    nombre = models.CharField(max_length= 50)
     porcentaje = models.FloatField(default=0)
     fechaInicio = models.DateField(default='2024-01-01')
     fechaFinal = models.DateField(default='2024-01-01')

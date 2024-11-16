@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pagos',
     'django_cryptography',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -126,5 +127,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-SIGNING_BACKEND = 'django_cryptography.core.signing.TimestampSigner'
