@@ -66,7 +66,12 @@ def obtenerpagos(request):
             pagos = Pago.objects.all()
             pagos_list = list(pagos.values())  # Convierte el queryset en una lista de diccionarios
             return JsonResponse(pagos_list, safe=False)
+
+
+
         
-
-
-# Create your views here.
+def traerPagos(Cronograma, fecha):
+    pagos = Pago.objects.filter(cronograma = Cronograma, fecha = fecha).all()
+    context = list(queryset.values('id', 'name'))
+    return JsonResponse(context, safe=False)
+    # Create your views here.
